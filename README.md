@@ -30,7 +30,7 @@
 | item_name              | string     | null: false                   |
 | item_text              | text       | null: false                   |
 | category_id            | integer    | null: false                   |
-| satatus_id             | integer    | null: false                   |
+| status_id             | integer    | null: false                   |
 | responsibility_id      | integer    | null: false                   |
 | prefecture_id          | integer    | null: false                   |
 | schedule_delivery_id   | integer    | null: false                   |
@@ -49,12 +49,12 @@
 | Column                 | Type       | Options                       |
 | ---------------------- | ---------- | ------------------------------|
 | postal_code            | string     | null: false                   |
-| pref_id                | integer    | null: false                   |
+| prefecture_id          | integer    | null: false                   |
 | city                   | string     | null: false                   |
 | street                 | string     | null: false                   |
 | building               | string     |                               |
 | tel                    | string     | null: false                   |
-| oder                   | references | null: false, foreign_key: true|
+| order                  | references | null: false, foreign_key: true|
 
 ### Association
 - belongs_to :order
