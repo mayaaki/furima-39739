@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
 
   def index
-    @items = Item.includes(:user).order("created_at DESC")
+    # @items = Item.includes(:user).order("created_at DESC")
   end
   
   def new
@@ -10,11 +10,10 @@ class ItemsController < ApplicationController
   end
 
   def create
-    item = Item.create(item_params)
-    if item.save
+    @item = Item.create(item_params)
+    if @item.save
       redirect_to root_path
     else
-      @item = item
       render :new, status: :unprocessable_entity
     end
   end
