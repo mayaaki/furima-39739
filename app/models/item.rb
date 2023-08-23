@@ -7,7 +7,7 @@ class Item < ApplicationRecord
   belongs_to :schedule_delivery
   belongs_to :user
   has_one_attached :image
-  # has_one :order
+  has_one :order
 
   validates :item_name, :item_text, :image, presence: true
   validates :category_id, :status_id, :responsibility_id, :prefecture_id, :schedule_delivery_id,
