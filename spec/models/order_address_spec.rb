@@ -52,29 +52,29 @@ RSpec.describe OrderAddress, type: :model do
       it 'telが10桁以上でないと保存できないこと' do
         @order_address.tel = '090123'
         @order_address.valid?
-        expect(@order_address.errors.full_messages).to include("Tel is too short (minimum is 10 characters)")
+        expect(@order_address.errors.full_messages).to include('Tel is too short (minimum is 10 characters)')
       end
       it 'telが11桁以内でないと保存できないこと' do
         @order_address.tel = '090123456789'
         @order_address.valid?
-        expect(@order_address.errors.full_messages).to include("Tel is too long (maximum is 11 characters)")
+        expect(@order_address.errors.full_messages).to include('Tel is too long (maximum is 11 characters)')
       end
       it 'telが半角数値でないと保存できないこと' do
         @order_address.tel = '０９０１２３４５６７８'
         @order_address.valid?
-        expect(@order_address.errors.full_messages).to include("Tel is invalid")
+        expect(@order_address.errors.full_messages).to include('Tel is invalid')
       end
-      it "tokenが空では登録できないこと" do
+      it 'tokenが空では登録できないこと' do
         @order_address.token = nil
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include("Token can't be blank")
       end
-      it "user_idが空では登録できないこと" do
+      it 'user_idが空では登録できないこと' do
         @order_address.user_id = ''
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include("User can't be blank")
       end
-      it "item_idが空では登録できないこと" do
+      it 'item_idが空では登録できないこと' do
         @order_address.item_id = ''
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include("Item can't be blank")
